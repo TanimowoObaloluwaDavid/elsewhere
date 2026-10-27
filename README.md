@@ -100,6 +100,8 @@ node tool/shots/demo.mjs           # an interaction clip for the GIF
 python tool/make_demo_gif.py       # clip → docs/demo.gif
 ```
 
+Recording the GIF additionally needs Playwright's ffmpeg — run `npx playwright install ffmpeg` inside `tool/shots` once.
+
 The generated media is committed, so a fresh clone needs none of this to run. The scripts are included for anyone who wants to remix the journal.
 
 ## Project structure

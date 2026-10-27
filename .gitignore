@@ -62,6 +62,7 @@ docs/video/
 
 # Android
 **/.gradle/
+**/.kotlin/
 **/captures/
 **/local.properties
 key.properties
