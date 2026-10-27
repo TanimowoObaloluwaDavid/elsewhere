@@ -1,0 +1,13 @@
+﻿{
+  "name": "elsewhere-shots",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "shots": "node screens.mjs",
+    "banner": "node banner.mjs",
+    "demo": "node demo.mjs"
+  },
+  "dependencies": {
+    "playwright-core": "^1.64.0"
+  }
+}

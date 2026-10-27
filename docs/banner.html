@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face {
+    font-family: 'DM Serif Display';
+    src: url('../assets/fonts/DMSerifDisplay-Regular.ttf');
+  }
+  @font-face {
+    font-family: 'DM Serif Display';
+    font-style: italic;
+    src: url('../assets/fonts/DMSerifDisplay-Italic.ttf');
+  }
+  @font-face {
+    font-family: 'Figtree';
+    font-weight: 400;
+    src: url('../assets/fonts/Figtree-Regular.ttf');
+  }
+  @font-face {
+    font-family: 'Figtree';
+    font-weight: 500;
+    src: url('../assets/fonts/Figtree-Medium.ttf');
+  }
+  @font-face {
+    font-family: 'Figtree';
+    font-weight: 600;
+    src: url('../assets/fonts/Figtree-SemiBold.ttf');
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    width: 1600px;
+    height: 800px;
+    overflow: hidden;
+    background: #F3ECDF;
+    color: #1B1A16;
+    -webkit-font-smoothing: antialiased;
+  }
+  body { position: relative; }
+  .grain {
+    position: absolute; inset: 0; z-index: 9; pointer-events: none;
+    background-image: url('../assets/grain.png');
+    opacity: 0.045; mix-blend-mode: multiply;
+  }
+  .arc {
+    position: absolute; left: -330px; bottom: -420px;
+    width: 880px; height: 880px; border-radius: 50%;
+    border: 1px solid rgba(180, 75, 44, 0.16);
+  }
+  .sun {
+    position: absolute; left: 64px; bottom: 78px;
+    width: 140px; height: 140px; border-radius: 50%;
+    border: 1px solid rgba(180, 75, 44, 0.16);
+  }
+  .sun:before {
+    content: ''; position: absolute; inset: 35px;
+    border-radius: 50%; background: rgba(180, 75, 44, 0.10);
+  }
+  .page {
+    position: relative; z-index: 2;
+    height: 100%; padding: 54px 64px 52px;
+    display: grid; grid-template-columns: 748px 1fr; gap: 56px;
+  }
+  .left { display: flex; flex-direction: column; padding: 10px 0 4px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand svg { display: block; }
+  .brand .word {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 36px; letter-spacing: -1.4px; line-height: 1;
+  }
+  .brand .dot { color: #B44B2C; }
+  .middle { margin-top: auto; margin-bottom: auto; padding-bottom: 10px; }
+  .kicker {
+    display: flex; align-items: center; gap: 14px;
+    font-family: Figtree, sans-serif; font-weight: 600;
+    font-size: 10px; letter-spacing: 2.6px; color: #6F685C;
+    text-transform: uppercase;
+  }
+  .kicker .line { width: 30px; height: 1px; background: #B44B2C; opacity: .7; }
+  h1 {
+    margin: 26px 0 24px;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400; font-size: 112px; line-height: .9;
+    letter-spacing: -4.2px;
+  }
+  h1 em { font-style: italic; color: #B44B2C; }
+  p {
+    margin: 0; max-width: 560px;
+    font-family: Figtree, sans-serif; font-size: 18px; line-height: 1.65;
+    color: #6F685C;
+  }
+  .foot {
+    display: flex; align-items: center; gap: 16px;
+    font-family: Figtree, sans-serif; font-weight: 500;
+    font-size: 9.5px; letter-spacing: 2.1px; text-transform: uppercase;
+    color: #6F685C;
+  }
+  .foot .dot { width: 5px; height: 5px; border-radius: 50%; background: #B44B2C; }
+  .foot .rule { width: 40px; height: 1px; background: #D9CFBF; }
+  .right { position: relative; }
+  .issue {
+    position: absolute; top: -34px; right: 2px;
+    font-family: Figtree, sans-serif; font-weight: 500;
+    font-size: 8.5px; line-height: 1.4;
+    letter-spacing: 2.1px; color: #9A9183; text-transform: uppercase;
+  }
+  .photo { position: absolute; overflow: hidden; border-radius: 26px; }
+  .main {
+    right: 0; top: 0; width: 452px; height: 646px;
+    box-shadow: 0 34px 80px rgba(27, 26, 22, .24);
+  }
+  .main img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cap {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    padding: 84px 24px 22px;
+    background: linear-gradient(transparent, rgba(15, 18, 15, .82));
+    color: #F4ECDD;
+  }
+  .cap .place {
+    max-width: 340px;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 30px; line-height: 1.02;
+  }
+  .cap .meta {
+    margin-top: 7px;
+    font-family: Figtree, sans-serif; font-size: 8.5px;
+    letter-spacing: 1.9px; text-transform: uppercase;
+    color: rgba(244, 236, 221, .64);
+  }
+  .small {
+    left: -26px; bottom: 10px;
+    width: 248px; height: 218px;
+    border: 8px solid #F3ECDF;
+    border-radius: 22px;
+    box-shadow: 0 24px 50px rgba(27, 26, 22, .22);
+    transform: rotate(-3.2deg);
+  }
+  .small img { width: 100%; height: 100%; object-fit: cover; display: block; }
+</style>
+</head>
+<body>
+  <div class="arc"></div>
+  <div class="sun"></div>
+  <div class="page">
+    <div class="left">
+      <div class="brand">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <circle cx="13" cy="13" r="4.4" stroke="#B44B2C" stroke-width="1.1"/>
+          <g stroke="#B44B2C" stroke-width="1.1" stroke-linecap="round">
+            <path d="M13 1.5v3.2"/><path d="M13 21.3v3.2"/>
+            <path d="M1.5 13h3.2"/><path d="M21.3 13h3.2"/>
+            <path d="M4.9 4.9l2.3 2.3"/><path d="M18.8 18.8l2.3 2.3"/>
+            <path d="M21.1 4.9l-2.3 2.3"/><path d="M7.2 18.8l-2.3 2.3"/>
+          </g>
+        </svg>
+        <div class="word">elsewhere<span class="dot">.</span></div>
+      </div>
+
+      <div class="middle">
+        <div class="kicker"><span class="line"></span>A field journal for slow places</div>
+        <h1>Places that<br><em>stay</em> with you.</h1>
+        <p>Eight quiet places, five silent films, and a little room to keep the ones that stay with you.</p>
+      </div>
+
+      <div class="foot">
+        <span class="dot"></span>
+        <span>Eight places</span>
+        <span class="rule"></span>
+        <span>Five films</span>
+        <span class="rule"></span>
+        <span>One journal</span>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="issue">Issue 07 · October 2026</div>
+      <div class="photo main">
+        <img src="../assets/images/lofoten_01.jpg" alt="Lofoten, Norway">
+        <div class="cap">
+          <div class="place">The quiet end<br>of the world</div>
+          <div class="meta">Lofoten, Norway · 68.2° N</div>
+        </div>
+      </div>
+      <div class="photo small">
+        <img src="../assets/images/kyoto_03.jpg" alt="Kyoto, Japan">
+      </div>
+    </div>
+  </div>
+  <div class="grain"></div>
+</body>
+</html>

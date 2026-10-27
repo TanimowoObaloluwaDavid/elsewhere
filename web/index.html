@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en"><head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Elsewhere — an editorial field journal for slow places, silent films, and the light in between.">
+  <meta name="theme-color" content="#F3ECDF">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Elsewhere">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <title>Elsewhere — A Field Journal</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    html, body { margin: 0; height: 100%; background: #F3ECDF; }
+    body { font-family: Georgia, 'Times New Roman', serif; color: #1B1A16; }
+    #boot {
+      position: fixed; inset: 0; z-index: 1;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: #F3ECDF; transition: opacity .5s ease;
+    }
+    #boot .mark { font-size: 44px; letter-spacing: -1.5px; }
+    #boot .mark span { color: #B44B2C; }
+    #boot .line { width: 42px; height: 1px; background: #B44B2C; margin: 18px 0 14px; }
+    #boot .tag {
+      font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 9px;
+      letter-spacing: 2.4px; text-transform: uppercase; color: #6F685C;
+    }
+  </style>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+</head>
+<body>
+  <div id="boot">
+    <div class="mark">elsewhere<span>.</span></div>
+    <div class="line"></div>
+    <div class="tag">A field journal for slow places</div>
+  </div>
+  <script>
+    (function () {
+      function dismiss() {
+        var boot = document.getElementById('boot');
+        if (!boot) return;
+        boot.style.opacity = '0';
+        setTimeout(function () { if (boot.parentNode) boot.parentNode.removeChild(boot); }, 520);
+      }
+      window.addEventListener('flutter-first-frame', dismiss);
+      setTimeout(dismiss, 12000);
+    })();
+  </script>
+  <script src="flutter_bootstrap.js" async=""></script>
+
+
+</body></html>
